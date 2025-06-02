@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Fiori di Preghiera - A sacred garden of prayers and reflections, crafted with love by Roses of Rome and the Cottolengo Sisters.">
+  <meta name="keywords" content="Fiori di Preghiera, Roses of Rome, Cottolengo Sisters, spiritual app, prayers, faith, devotion, meditation, liturgical calendar">
+  <meta name="author" content="Roses of Rome Pictures">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Fiori di Preghiera - A Sacred Garden of Prayers">
+  <meta property="og:description" content="Experience a serene path of faith with Fiori di Preghiera, a spiritual app crafted with love and devotion.">
+  <meta property="og:image" content="https://vladimirgagarin.github.io/fiori/rose.jpg">
+  <meta property="og:url" content="https://vladimirgagarin.github.io/fiori/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Fiori di Preghiera - A Sacred Garden of Prayers">
+  <meta name="twitter:description" content="Discover Fiori di Preghiera, a spiritual app designed to nourish your soul with prayers and reflections.">
+  <meta name="twitter:image" content="https://vladimirgagarin.github.io/fiori/rose.jpg">
+  <!--Import  Cinzel font here-->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="https://vladimirgagarin.github.io/fiori/rose.jpg" type="image/x-icon">
+<head>
+  <meta charset="UTF-8">
+  <title>Fiori Di  Pagina</title>
+  <style>
+    *{
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+   body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    .container {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .intros {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+     .video-slides{
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      background-image: url('bgvideo.jpg') no-repeat center center;
+      background-size: cover;
+    }
+    .video-slides video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      overflow: hidden;
+    }
+    .text-div {
+      position: absolute;
+      bottom: 20px;
+      right: 40px;
+      color: white;
+      z-index: 10;
+      text-align: center;
+     
+    }
+    .text-div h1 {
+      font-size: 2.5em;
+      margin: 0;
+      padding: 10px;
+      color: white;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-family: 'Cinzel', serif;
+      text-align: center;
+      text-shadow: 2px 2px 4px rgba(84, 81, 81, 0.5);
+    }
+    .text-div p {
+      font-size: 1.2em;
+      margin-top: 10px;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(84, 81, 81, 0.5);
+    }
+    
+    .about{
+        width: 100%;
+        min-height: 100vh;
+        padding: 10px;
+        margin-top: 10px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        margin-right: 20px;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .about-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 20px;
+      background-color: rgba(84, 81, 81, 0.5);
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+      height: 60vh;
+      aspect-ratio: 16 / 9;
+    }
+    .about-video {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px 10px 0 0;
+    }
+    .about-card video {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px 10px 0 0;
+      object-fit: cover;
+    }
+    .about-text {
+      padding: 20px;
+      text-align: center;
+      font-size: 1.4em;
+      color: #fff;
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      background-color: rgba(46, 45, 41, 0.8);
+      z-index: 2;
+      font-weight: bold;
+      max-width: 40%;
+      text-align: justify;
+    }
+
+    .footer{
+        width: 100%;
+        height: 60vh;
+        margin-top: 10px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px 0 10px 0;
+        margin-bottom: 10px;
+    }
+
+    .footer video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .footer .overlay-text {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: rgba(29, 29, 28, 0.6);
+      color: #f4f4f4;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+    }
+    .overlay-actions{
+      margin-top: 10px;
+      padding: 20px;
+
+    }
+    .overlay-actions button {
+      background-color: #007bff;
+      color: #f4f4f4;
+      padding: 10px 20px;
+      border: 10px inset #007bff ;
+      margin-inline: 30px;
+      font-size: 1.7rem;
+      cursor: pointer;
+      border-radius: 5px;
+
+    }
+
+    .overlay-actions button:hover, .overlay-actions a:hover{
+      opacity: 0.6;
+    }
+   
+    .overlay-downloads{
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: rgba(29, 29, 28, 0.6);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      z-index: 100;
+    }
+
+    .overlay-downloads.active{
+      display: flex;
+    }
+
+    .overlay-downloads .download-content{
+      width: 40%;
+      max-height: 90vh;
+      overflow-y: auto;
+      background:linear-gradient(45deg, rgba(85, 79, 79, 0.874), rgb(28, 28, 70)) ;
+      border: 8px inset #ccc;
+      color: #f4f4f4;
+      padding: 30px;
+      height: auto;
+      
+    }
+
+    .download-content .header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      border-bottom:  1px  solid #f4f4f4;
+      padding: 10px;
+    }
+
+     .download-content .header h1{
+      font-size: 2.4rem;
+     }
+      .download-content .header span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        width: 30px;
+        height: 30px;
+        background-color: #ff0000;
+        color: #f4f4f4;
+        cursor: pointer;
+      }
+
+      .download-content .header span:hover{
+        opacity: 0.5;
+      }
+
+      .download-content .content {
+        margin-top: 20px;
+        width: 100%;
+
+      }
+
+      .download-content .content a {
+        text-decoration: none;
+        background-color: #004600;
+        color: #f4f4f4;
+        padding: 10px;
+        border: 1px solid transparent;
+        margin-top: 60px;
+        font-size: 1.2rem;
+        cursor: pointer;
+      }
+      .download-content .content a:hover{
+        opacity: 0.5;
+      }
+
+      .download-content .content p {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+      }
+      .sentiment{
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        background: url('flowers_background_4.jpeg') no-repeat center center;
+        background-size:cover;
+        background-color: #8b0000;
+
+      }
+      .sentiment::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(29, 29, 28, 0.8);
+
+      }
+
+      .sentiment > * {
+        position: relative;
+        z-index: 4;
+      }
+
+      .sentiment h1 {
+        text-align: center;
+        font-size: 2.5rem;
+        color: #f4f4f4;
+        z-index: 10;
+        text-align: justify;
+        margin: 20px 0;
+        padding: 10px;
+        font-family: 'Cinzel', serif;
+      }
+      
+      .buttonClass {
+        font-size:15px;
+        font-family:Arial;
+        width:140px;
+        height:50px;
+        border-width:1px;
+        color:#fff;
+        border-color:rgba(144, 19, 254, 1);
+        font-weight:bold;
+        border-top-left-radius:18px;
+        border-top-right-radius:18px;
+        border-bottom-left-radius:18px;
+        border-bottom-right-radius:18px;
+        box-shadow: 3px 4px 0px 0px rgba(7, 74, 153, 1);
+        text-shadow: 0px 1px 0px #810e05;
+        background:linear-gradient(rgba(34, 41, 230, 1), rgba(74, 144, 226, 1));
+      }
+
+      .buttonClass:hover {
+        background: linear-gradient(rgba(74, 144, 226, 1), rgba(34, 41, 230, 1));
+      }
+
+        .welcome-message {
+            background: transparent;
+            padding: 2rem;
+            margin: 2rem auto;
+            border-radius: 1.5rem;
+            max-width: 700px;
+            text-align: center;
+            font-family: 'Cinzel', serif;
+            color: #fff;
+            height: 100%;
+            position: relative;
+          }
+
+        .welcome-message h2 {
+          font-size: 2rem;
+          color: goldenrod;
+          margin-bottom: 1rem;
+          font-family: 'Cinzel', serif;
+        }
+
+        .welcome-message p {
+          font-size: 1.4rem;
+          line-height: 1.6;
+          font-family: 'Cinzel', serif;
+          margin: 0.5rem 0;
+          font-weight: bold;
+          text-align: justify;
+        }
+
+        .welcome-message em {
+          font-style: italic;
+          color: #007bff;
+          font-family: 'Cinzel', serif;
+          margin-bottom: 20px;
+        }
+        .welcome-message em {
+          color: #7b3e19; /* warm earthy tone */
+          font-style: italic;
+          font-weight: bold;
+        }
+
+
+        .link-cottolengo {
+          font-size:1.2rem;
+          font-family:Arial;
+          padding: 10px 20px;
+          text-decoration: none;
+          width: 80%;
+          
+          border-width:1px;
+          color:rgba(20, 72, 133, 1);
+          border-color:#d6bcd6;
+          font-weight:bold;
+          border-top-left-radius:15px;
+          border-top-right-radius:15px;
+          border-bottom-left-radius:15px;
+          border-bottom-right-radius:15px;
+          box-shadow: 3px 4px 0px 0px #899599;
+          text-shadow: 0px 1px 0px #e1e2ed;
+          background:linear-gradient(#ededed, #bab1ba);
+          position: absolute;
+          bottom: 0;
+          left: 10%;
+        }
+
+        .loading-text{
+          background-color: #004600;
+          padding: 10px 20px;
+        }
+
+       
+        .intro-logo {
+          position: absolute;
+          top: 15px;
+          left: 15px;
+          width: 200px;
+          height: 200px;
+          border-radius: 50%;
+          object-fit: cover;
+          border: 2px solid #fff; /* optional: adds a white border */
+          box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* optional: adds a soft shadow */
+          z-index: 10;
+          transition: all 500ms ease-in-out;
+        }
+
+        /* Full-screen mode */
+        .intro-logo.full-screen {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100vw;
+          height: 100vh;
+          border-radius: 0;
+          object-fit: cover; /* preserves aspect ratio while fitting entire image */
+          background-color: rgba(0,0,0,0.9); /* optional: dark background behind the image */
+          z-index: 9999;
+        }
+              
+
+      @media screen and (max-width: 800px) {
+        .about-card {
+          width: 99%;
+          height: auto;
+          aspect-ratio: auto;
+          min-height: 40vh;
+          flex-direction: column-reverse;
+        }
+        .about-text {
+          min-width: 100%;
+          height: auto;
+          font-size: 1.2em;
+          position: relative;
+          bottom: 0;
+          right: 0;
+          padding: 10px;
+          text-align: justify;
+
+        }
+        .about-video {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+        .overlay-downloads .download-content {
+          width: 90%;
+          height: auto;
+        }
+        .footer {
+          height: 50vh;
+          width: 99%;
+        }
+
+        .footer video {
+          height: 100%;
+        }
+        .footer .overlay-text {
+          padding: 20px;
+        }
+        .footer .overlay-actions{
+          justify-content: center;
+          align-items: center;
+          display: flex;
+        }
+        .overlay-actions button {
+          font-size: 1.2rem;
+          padding: 8px 16px;
+         margin-inline: 10px;
+        }
+        .sentiment {
+          min-height: 100vh;
+          background-size: cover;
+          justify-content: center;
+          align-items: center;
+          display: flex;
+        }
+
+         .welcome-message {
+            padding: 1rem;
+            margin: 1rem auto;
+            height: 100%;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+          }
+
+          .welcome-message h2 {
+            font-size: 1.5rem;
+          }
+
+          .welcome-message p {
+            font-size: 1.1rem;
+            line-height: 1.5;
+          }
+
+          .link-cottolengo {
+            font-size: 1.2rem;
+            padding: 8px 16px;
+            width: 90%;
+            left: 5%;
+            bottom: 10px;
+            text-align: center;
+            box-shadow: 2px 3px 0px 0px #899599;
+          }
+        
+
+        .sentiment h1 {
+          font-size: 1.8rem;
+          padding: 5px;
+        }
+
+        .container{
+          height: 100vh;
+        }
+        .video-slides{
+          width: 100%;
+          height: 100%;
+          position: relative;
+          overflow: hidden;
+          background-image: url('bgvideo.jpg') no-repeat center center;
+          background-size: cover;
+          aspect-ratio: 16 / 9;
+        }
+        .container .video-slides video {
+          height: 100%;
+          aspect-ratio: 16 / 9;
+        }
+
+        .text-div h1 {
+          font-size: 1.5em;
+          padding: 5px;
+        }
+        .text-div p {
+          font-size: 1em;
+        }
+
+        .intro-logo {
+          position: absolute;
+          top: 15px;
+          left: 15px;
+          width: 100px;
+          height: 100px;
+          border-radius: 50%;
+          object-fit: cover;
+          border: 2px solid #fff; /* optional: adds a white border */
+          box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* optional: adds a soft shadow */
+          z-index: 10;
+        }
+      }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+
+  </div>
+  <div class="sentiment">
+    <div class="welcome-message">
+            
+      <h2 
+        data-english="Welcome to Fiori di Preghiera"
+        data-italian="Benvenuto a Fiori di Preghiera">
+        Welcome to Fiori di Preghiera
+      </h2>
+
+      <p 
+        data-english="A heartfelt offering from Roses of Rome Pictures, crafted with reverence and love. May this app be your garden of reflection, blooming with spiritual light."
+        data-italian="Un'offerta sincera da Roses of Rome Pictures, realizzata con rispetto e amore. Che questa app sia il tuo giardino di riflessione, fiorendo con luce spirituale.">
+        A heartfelt offering from <strong>Roses of Rome Pictures</strong>, crafted with reverence and love. May this app be your garden of reflection, blooming with spiritual light.
+      </p>
+
+      <br>
+      <!---ADD 2 MORE PROFOUND  P TAGS HERE-->
+      <p 
+        data-english="May each prayer you encounter here be a gentle reminder of the infinite grace that surrounds us, even in the quietest moments."
+        data-italian="Che ogni preghiera che incontri qui sia un dolce promemoria della grazia infinita che ci circonda, anche nei momenti più silenziosi.">
+        May each prayer you encounter here be a gentle reminder of the infinite grace that surrounds us, even in the quietest moments.
+      </p>
+
+      <p 
+        data-english="In this garden of prayers, may you find strength, hope, and a deeper connection to the light within you."
+        data-italian="In questo giardino di preghiere, possa tu trovare forza, speranza e una connessione più profonda con la luce dentro di te.">
+        In this garden of prayers, may you find strength, hope, and a deeper connection to the light within you.
+      </p>
+
+
+      <p 
+      data-english="With our deepest blessings and abiding prayers for you, may this app be a source of peace, comfort, and spiritual growth in your life. Know that you are remembered always in our hearts and prayers, and that we walk with you in this journey of faith. — The Cottolengo Sisters of Nairobi"
+      data-italian="Con le nostre più profonde benedizioni e le nostre preghiere costanti per te, possa questa app essere per te una fonte di pace, conforto e crescita spirituale. Sappi che sei sempre presente nei nostri cuori e nelle nostre preghiere, e che camminiamo con te in questo cammino di fede. — Le Suore Cottolengo di Nairobi">
+      With our deepest blessings and abiding prayers for you, may this app be a source of peace, comfort, and spiritual growth in your life. Know that you are remembered always in our hearts and prayers, and that we walk with you in this journey of faith. <br>
+      <em style="color: gold;">— The Cottolengo Sisters of Nairobi</em>
+    </p>
+
+      <a 
+        href="https://cottolengokenya.org/cottolengo-sisters/" 
+        target="_blank" 
+        class="link-cottolengo"
+        data-english="Visit the Official Website of the Cottolengo Sisters"
+        data-italian="Visita il sito ufficiale delle Suore Cottolengo"
+         rel="noopener noreferrer"
+        >
+        Visit the Official Website of the Cottolengo Sisters
+      </a>
+    </div>
+  </div>
+
+  <div class="about"></div>
+
+  <div class="footer">
+    <div class="overlay-text">
+      <h1 data-english="Let your spirit bloom" data-italian="Lascia fiorire il tuo spirito">
+        Let your spirit bloom
+      </h1>
+
+      <div class="overlay-actions">
+        <button 
+          id="download-btn" 
+          data-english="Download now" 
+          data-italian="Scarica ora"
+        >
+          Download now
+        </button>
+
+         <button 
+          id="transbtn" 
+          data-lang="en"
+          data-english="🇮🇹 Italiano" 
+          data-italian="🇬🇧 English"
+        >
+        🇮🇹 Italiano</button>
+      </div>
+    </div>
+    <video autoplay muted>
+        <source src="downloadvid.mp4" type="video/mp4" poster="poster.jpg">
+        Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <div class="overlay-downloads">
+    <div class="download-content">
+      <div class="header">
+        <h1 data-english="Thank you!" data-italian="Grazie!">Thank you!</h1>
+        <span>&times;</span>
+      </div>
+      <div class="content">
+        <p 
+          data-english="With all our hearts, we thank you for choosing the Fiori di Preghiera App. May it bloom in your spirit as it was born from ours. With love, from Roses of Rome and the Cottolengo Sisters of Nairobi."
+          data-italian="Con tutto il cuore, ti ringraziamo per aver scelto l'app Fiori di Preghiera. Che possa fiorire nel tuo spirito così come è nata nel nostro. Con amore, da Roses of Rome e dalle Suore Cottolengo di Nairobi.">
+          With all our hearts, we thank you for choosing the Fiori di Preghiera App. May it bloom in your spirit as it was born from ours. With love, from Roses of Rome and the Cottolengo Sisters of Nairobi.
+        </p>
+        <br><br>
+        <a href="yourfile.zip" download 
+          data-english="Download Now" 
+          data-italian="Scarica ora"
+          class="buttonClass"
+          >
+          Download App (89MBs)
+        </a>
+      </div>
+    </div>
+</div>
+
+ 
+  <script>
+    const  userLang = navigator.language || navigator.userLanguage;
+    let currentLang = userLang.startsWith('it') ? 'it' : 'en';
+    let currentSlide = 0;
+    const videoSlidesContainer = document.querySelector('.video-slides');
+    const aboutContainer = document.querySelector('.about');
+    const textDiv = document.querySelector('.text-div');
+    const langBtn = document.getElementById("transbtn");
+    const downloadBtn = document.querySelector('#download-btn');
+    const  overlayDownload = document.querySelector('.overlay-downloads');
+
+    
+  function setLanguage(lang) {
+    const elements = document.querySelectorAll("[data-english][data-italian]");
+
+    elements.forEach(el => {
+      el.textContent = lang === "it" ? el.dataset.italian : el.dataset.english;
+    });
+
+    document.documentElement.lang = lang;
+    langBtn.dataset.lang = lang;
+    langBtn.textContent = lang === "it" ? langBtn.dataset.italian : langBtn.dataset.english;
+
+    // Save to localStorage
+    localStorage.setItem("preferredLang", lang);
+  }
+
+  // Toggle between English and Italian
+  langBtn.addEventListener("click", () => {
+    const currentLang = langBtn.dataset.lang;
+    const nextLang = currentLang === "en" ? "it" : "en";
+    setLanguage(nextLang);
+  });
+
+   const  sistersPhotos = [
+      "flowers_background_4.jpeg",
+      "rome.png",
+      "sisters.jpg",
+      "sisters2.jpeg",
+      "sister3.jpg",
+      "sister4.jpg",
+      "sister5.jpeg",
+      "rose.jpg"
+    ]
+
+  // On load, check saved language or use browser default
+  window.addEventListener("DOMContentLoaded", () => {
+    const savedLang = localStorage.getItem("preferredLang");
+    const defaultLang = savedLang || (navigator.language.startsWith("it") ? "it" : "en");
+    setLanguage(defaultLang);
+
+    const sentimentSection = document.querySelector('.sentiment');
+    let currentPhotoIndex = 0;
+
+    function changeBackgroundImage() {
+      sentimentSection.style.backgroundImage = `url('${sistersPhotos[currentPhotoIndex]}')`;
+      currentPhotoIndex = (currentPhotoIndex + 1) % sistersPhotos.length;
+    }
+
+    // Start slideshow
+    changeBackgroundImage(); // Set initial
+    setInterval(changeBackgroundImage, 16000); // Change every 5s
+  });
+
+    const  videoSlides = [
+      {src: "bgvideo2.mp4", text: {en: "Welcome to Fiori Di Preghierra", it: "Benvenuti a Fiori Di Preghierra"}},
+      {src: "bgvideo.mp4", text: {en: "Roses of Rome", it: "Rose di Roma"}},
+      {src: "bgvideo3.mp4", text: {en: "In blooming union with", it: "In fiorente unione con"}},
+      {src: "bgvideo1.mp4", text: {en: "Cottolengo Sisters Community", it: "Comunità delle Sorelle Cottolengo"}},
+      {src: "bgvideo6.mp4", text: {en: "Blossom together to present", it: "Fioriscono insieme per presentare"}},
+      {src: "bgvideo4.mp4", text: {en: "Fiori Di Preghierra", it: "Fiori Di Preghierra"}},
+      {src: "bgvideo5.mp4", text: {en: "A Journey of Faith and Devotion", it: "Un viaggio di fede e devozione"}},
+    ];
+
+    const abouts = [
+      {
+        vidSrc: "textvideo.mp4",
+        text: {
+          en: "Fiori di Preghiera is more than an app — it's a sacred garden for the soul. Each flower you tap opens a spiritual reflection, a prayer, a moment of grace. Born to nourish your daily devotion, it gently leads you through a serene path of faith.",
+          it: "Fiori di Preghiera è più di un'app: è un giardino sacro per l'anima. Ogni fiore che tocchi apre una riflessione spirituale, una preghiera, un momento di grazia. Nata per nutrire la tua devozione quotidiana, ti guida con dolcezza su un sentiero sereno di fede."
+        }
+      },
+      {
+        vidSrc: "textvideo2.mp4",
+        text: {
+          en: "Roses of Rome is a creative sanctuary where spirituality meets storytelling. With a deep reverence for tradition and an eye for design, we cultivate beauty through faith-inspired creations — Fiori di Preghiera being one of our dearest blossoms. Guided by our timeless motto, “Aeternum Floreamus” — Let us bloom forever — we strive to plant seeds of light that blossom in hearts across the world.",
+          it: "Roses of Rome è un santuario creativo dove la spiritualità incontra la narrazione. Con profondo rispetto per la tradizione e un occhio per il design, coltiviamo la bellezza attraverso creazioni ispirate dalla fede — Fiori di Preghiera è uno dei nostri fiori più cari. Guidati dal nostro motto senza tempo, “Aeternum Floreamus” — Fioriamo in eterno — ci impegniamo a piantare semi di luce che sboccino nei cuori di tutto il mondo."
+        }
+      },
+      {
+        vidSrc: "textvideo3.mp4",
+        text: {
+          en: "The Cottolengo Sisters in Nairobi embody humble service, quiet strength, and unwavering devotion. Their prayers, songs, and presence are the living roots of this spiritual garden. Their love has shaped every flower in Fiori di Preghiera.",
+          it: "Le Suore Cottolengo di Nairobi incarnano il servizio umile, la forza silenziosa e la devozione incrollabile. Le loro preghiere, i loro canti e la loro presenza sono le radici vive di questo giardino spirituale. Il loro amore ha plasmato ogni fiore di Fiori di Preghiera."
+        }
+      },
+      {
+        vidSrc: "textvideo4.mp4",
+        text: {
+          en: "This app was born from the labor of love. Roses of Rome brought the vision, but it was the heart and hands of Sr. Mary Japheth — her gentle guidance and profound devotion — that nurtured Fiori di Preghiera into life. It is her offering, and yours to share.",
+          it: "Quest'app è nata da un lavoro d'amore. Roses of Rome ha portato la visione, ma è stato il cuore e le mani di Suor Mary Japheth — la sua guida gentile e la sua profonda devozione — a dare vita a Fiori di Preghiera. È la sua offerta, e il tuo dono da condividere."
+        }
+      },
+      {
+        vidSrc: "textvideo5.mp4",
+        text: {
+          en: "Download Fiori di Preghiera today — and carry a sacred garden in your pocket. Experience daily meditations, intercessory prayers, journaling, and a liturgical calendar — all wrapped in beauty and peace. It's more than an app — it’s a prayer companion that blooms with you.",
+          it: "Scarica Fiori di Preghiera oggi — e porta con te un giardino sacro in tasca. Scopri meditazioni quotidiane, preghiere di intercessione, un diario spirituale e un calendario liturgico — tutto avvolto in bellezza e pace. È più di un'app — è un compagno di preghiera che fiorisce con te."
+        }
+      }
+    ];
+
+
+    const  aboutMessage =  {
+      en: "In a garden of grace, Roses of Rome and the Cottolengo Sisters blossom together to present Fiori di Preghiera — petals of prayer for every soul. ",
+      it: "In un giardino di grazia, Roses of Rome e le Suore Cottolengo fioriscono insieme per presentare Fiori di Preghiera — petali di preghiera per ogni anima."
+    }
+
+   
+
+    
+    function displaysIntros(currentVideo, index) {
+        const vidcontainer = document.querySelector('.container');
+        vidcontainer.innerHTML = ` 
+        <div class="intros">
+           <img src="rose.jpg" alt="Logo" class="intro-logo id="introLogo">
+          <div class="text-div">
+            <h1 data-italian="${currentVideo.text.it}" data-english="${currentVideo.text.en}">${currentVideo.text.en}</h1>
+            <p class="loading-text" data-italian="Caricamento..." data-english="Loading...">Loading...</p>
+          </div>
+          <div class="video-slides">
+            <video autoplay muted>
+              <source src="${currentVideo.src}" type="video/mp4" poster="poster.jpg">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+      </div>`;
+        
+      const vid = vidcontainer.querySelector('video');
+      const introLogo = vidcontainer.querySelector('.intro-logo');
+
+      const loadingText = document.querySelector('.loading-text');
+        vid.addEventListener('ended', nextSlide);
+  
+        vid.addEventListener('contextmenu', (e) => {
+          e.preventDefault();
+        });
+
+        vid.addEventListener("loadeddata", () => {
+          loadingText.style.display = "none";
+        });
+        vid.addEventListener("waiting", () => {
+          loadingText.textContent = "Loading video...";
+          loadingText.style.display = "block";
+        });
+        vid.addEventListener("playing", () => {
+          loadingText.style.display = "none";
+        });
+        vid.addEventListener("error", () => {
+          loadingText.textContent = "Error loading video.";
+        });
+
+        vid.addEventListener("canplaythrough", () => {
+          loadingText.style.display = "none";
+        });
+
+
+        let isFullScreen = true;
+
+
+        introLogo.addEventListener('click', () => {
+          if (!isFullScreen) {
+            introLogo.classList.add('full-screen');
+            isFullScreen = true;
+          } else {
+            introLogo.classList.remove('full-screen');
+            isFullScreen = false;
+          }
+        });
+
+    }
+    
+    displaysIntros(videoSlides[currentSlide]);
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % videoSlides.length;
+      displaysIntros(videoSlides[currentSlide]);
+    }
+
+
+   function displayAbouts() {
+      const aboutContainer = document.querySelector('.about');
+      aboutContainer.innerHTML = '';
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          const video = entry.target;
+
+          if (entry.isIntersecting) {
+            video.play().catch(() => {}); // Prevent error if video is not allowed to autoplay
+          } else {
+            video.pause();
+          }
+        });
+      }, {
+        threshold: 0.5 // play only when at least 50% of the video is visible
+      });
+
+      abouts.forEach((about) => {
+        const videoElement = document.createElement('div');
+        videoElement.classList.add('about-card');
+
+        videoElement.innerHTML = `
+          <div class="about-text">
+            <p data-italian="${about.text.it}" data-english="${about.text.en}">${about.text.en}</p>
+          </div>
+          <div class="about-video">
+            <video muted playsinline preload="none" poster="poster.jpg">
+              <source src="${about.vidSrc}" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        `;
+
+        aboutContainer.appendChild(videoElement);
+
+        const video = videoElement.querySelector('video');
+        observer.observe(video);
+
+
+         
+      });
+    }
+
+    
+    displayAbouts();
+
+    downloadBtn.onclick = () => {
+      overlayDownload.classList.add('active');
+    }
+
+    document.querySelector('.download-content .header span').onclick = () => {
+      overlayDownload.classList.remove('active');
+    }
+
+
+    
+  </script>
+</body>
+</html>
