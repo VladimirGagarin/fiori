@@ -442,6 +442,70 @@
           background-color: rgba(0,0,0,0.9); /* optional: dark background behind the image */
           z-index: 9999;
         }
+
+        .video-container {
+       width: 100%;
+      margin: 40px auto;
+      background: #0f2a2e;
+      border-radius: 18px;
+      box-shadow: 0 8px 32px #0f2a2e55;
+      padding: 24px;
+    }
+    .video-div {
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      background: #222;
+    }
+     .video {
+      width: 100%;
+      display: block;
+      border-radius: 14px;
+      background: #222;
+    }
+    .video-controls {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(0deg, #000d 80%, #0000 100%);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px;
+      opacity: 0.95;
+      transition: opacity 0.3s;
+    }
+    .video-div:hover .video-controls,
+    .video-div:focus-within .video-controls {
+      opacity: 1;
+    }
+    .control-btn {
+      background: none;
+      border: none;
+      outline: none;
+      color: #fff;
+      font-size: 1.6rem;
+      cursor: pointer;
+      padding: 6px 12px;
+      border-radius: 8px;
+      transition: background 0.2s;
+    }
+    .control-btn:active {
+      background: #0ff2;
+    }
+    .progress-bar {
+      flex: 1;
+      margin: 0 12px;
+      accent-color: #19e6e6;
+      cursor: pointer;
+    }
+    .time-label {
+      color: #dff;
+      font-size: 0.95rem;
+      min-width: 40px;
+      text-align: right;
+    }
               
 
       @media screen and (max-width: 800px) {
@@ -494,7 +558,7 @@
          margin-inline: 10px;
         }
         .sentiment {
-          min-height: 100vh;
+          height: 130vh;
           background-size: cover;
           justify-content: center;
           align-items: center;
@@ -503,13 +567,14 @@
 
          .welcome-message {
             padding: 1rem;
-            margin: 1rem auto;
-            height: 100%;
+            border-radius: 0%;
+            min-height: 100%;
             width: 100%;
             justify-content: center;
             align-items: center;
             display: flex;
             flex-direction: column;
+            margin-bottom: 1rem;
           }
 
           .welcome-message h2 {
@@ -522,12 +587,13 @@
           }
 
           .link-cottolengo {
-            font-size: 1.2rem;
-            padding: 8px 16px;
-            width: 90%;
-            left: 5%;
-            bottom: 10px;
+            font-size: 1rem;
+            padding: 8px;
+            width: 99%;
+            left: 0;
+            bottom: 0;
             text-align: center;
+            border-radius: 0%;
             box-shadow: 2px 3px 0px 0px #899599;
           }
         
@@ -574,7 +640,139 @@
           box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* optional: adds a soft shadow */
           z-index: 10;
         }
+        .video-container{
+          padding: 0;
+          border-radius: 0%;
+          margin-bottom: 50px;
+        }
+        .video-controls {
+          
+          gap: 2px;
+          align-items: stretch;
+          padding: 3px 2px;
+        }
+        .progress-bar {
+          margin: 2px 0;
+          max-width: 60%;
+        }
+        .time-label {
+          min-width: 0;
+          font-size: 0.8rem;
+        }
+
+        .video{
+           width: 90%;
+        }
+          
       }
+   
+      /* Base container */
+.video-container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* Video wrapper to keep aspect ratio */
+.video-div {
+  position: relative;
+  
+  padding-top: 56.25%; /* 16:9 aspect ratio */
+  background-color: #000; /* fallback color */
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+  /* Video element inside the wrapper */
+  .video-div video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* adjust to 'contain' if you prefer letterboxing */
+    border-radius: 12px;
+  }
+
+  /* Controls styling */
+  .video-controls {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 8px 12px;
+    border-radius: 8px;
+    gap: 8px;
+  }
+
+  /* Control buttons */
+  .control-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+
+  .control-btn:hover {
+    color: #ffd700;
+  }
+
+  /* Progress bar */
+  .progress-bar {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 6px;
+    border-radius: 3px;
+    cursor: pointer;
+    width: 120px;
+  }
+
+  .progress-bar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    background: #ffd700;
+    height: 14px;
+    width: 14px;
+    border-radius: 50%;
+    border: none;
+  }
+
+  .progress-bar::-moz-range-thumb {
+    background: #ffd700;
+    height: 14px;
+    width: 14px;
+    border-radius: 50%;
+    border: none;
+  }
+
+  /* Time labels */
+  .time-label {
+    color: white;
+    font-size: 0.9rem;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 600px) {
+    .video-controls {
+      width: 100%;
+      align-items: stretch;
+      gap: 6px;
+    }
+
+    .progress-bar {
+      width: 100%;
+    }
+  }
+
+
 
   </style>
 </head>
@@ -634,6 +832,20 @@
 
   <div class="about"></div>
 
+  <div class="video-container">
+    <div class="video-div">
+      <video src="flowervid.mp4" poster="poster.jpg"></video>
+      <div class="video-controls">
+        <button class="control-btn" id="playpause" title="Play/Pause">&#9654;</button>
+        <button class="control-btn" id="mute" title="Mute/Unmute">&#128266;</button>
+        <input type="range" class="progress-bar" id="progress" title="Progress" value="0" min="0" max="100" step="0.1">
+        <span class="time-label" id="currentTime">0:00</span>/<span class="time-label" id="duration">0:00</span>
+        <button class="control-btn" id="fullscreen" title="Full Screen">&#9974;</button>
+      </div>
+    </div>
+  </div>
+
+  <br>
   <div class="footer">
     <div class="overlay-text">
       <h1 data-english="Let your spirit bloom" data-italian="Lascia fiorire il tuo spirito">
@@ -678,11 +890,11 @@
         </p>
         <br><br>
         <a href="yourfile.zip" download 
-          data-english="Download Now" 
-          data-italian="Scarica ora"
+          data-english="Download Now (134MBs)" 
+          data-italian="Scarica ora (134MBs)"
           class="buttonClass"
           >
-          Download App (89MBs)
+          Download App (134MBs)
         </a>
       </div>
     </div>
@@ -693,6 +905,8 @@
     const  userLang = navigator.language || navigator.userLanguage;
     let currentLang = userLang.startsWith('it') ? 'it' : 'en';
     let currentSlide = 0;
+    let isFullScreen = true;
+
     const videoSlidesContainer = document.querySelector('.video-slides');
     const aboutContainer = document.querySelector('.about');
     const textDiv = document.querySelector('.text-div');
@@ -857,10 +1071,10 @@
         });
 
 
-        let isFullScreen = true;
-
 
         introLogo.addEventListener('click', () => {
+          isFullScreen = !isFullScreen;
+          
           if (!isFullScreen) {
             introLogo.classList.add('full-screen');
             isFullScreen = true;
@@ -937,6 +1151,75 @@
 
 
     
+  </script>
+   <script>
+    const video = document.querySelector('.video-div video');
+    const playpauseBtn = document.getElementById('playpause');
+    const muteBtn = document.getElementById('mute');
+    const progress = document.getElementById('progress');
+    const fullscreenBtn = document.getElementById('fullscreen');
+    const currentTimeLabel = document.getElementById('currentTime');
+    const durationLabel = document.getElementById('duration');
+
+    // Format seconds as M:SS
+    function formatTime(sec) {
+      const m = Math.floor(sec / 60);
+      const s = Math.floor(sec % 60);
+      return `${m}:${s.toString().padStart(2, '0')}`;
+    }
+
+    // Update play/pause icon
+    function updatePlayPause() {
+      playpauseBtn.innerHTML = video.paused ? '&#9654;' : '&#10073;&#10073;';
+    }
+    // Play/pause
+    playpauseBtn.addEventListener('click', () => {
+      if (video.paused) video.play();
+      else video.pause();
+    });
+    video.addEventListener('click', () => {
+      if (video.paused) video.play();
+      else video.pause();
+    });
+    video.addEventListener('play', updatePlayPause);
+    video.addEventListener('pause', updatePlayPause);
+
+    // Mute/unmute
+    muteBtn.addEventListener('click', () => {
+      video.muted = !video.muted;
+      muteBtn.innerHTML = video.muted ? '&#128263;' : '&#128266;';
+    });
+    video.addEventListener('volumechange', () => {
+      muteBtn.innerHTML = video.muted ? '&#128263;' : '&#128266;';
+    });
+
+    // Progress bar
+    video.addEventListener('timeupdate', () => {
+      progress.value = (video.currentTime / video.duration) * 100 || 0;
+      currentTimeLabel.textContent = formatTime(video.currentTime);
+    });
+    video.addEventListener('durationchange', () => {
+      durationLabel.textContent = isNaN(video.duration) ? "0:00" : formatTime(video.duration);
+    });
+    progress.addEventListener('input', () => {
+      video.currentTime = (progress.value / 100) * video.duration;
+    });
+
+    // Fullscreen
+    fullscreenBtn.addEventListener('click', () => {
+      const vidDiv = video.parentElement;
+      if (document.fullscreenElement) {
+        document.exitFullscreen();
+      } else {
+        vidDiv.requestFullscreen();
+      }
+    });
+
+    // Init icons
+    updatePlayPause();
+    muteBtn.innerHTML = video.muted ? '&#128263;' : '&#128266;';
+    currentTimeLabel.textContent = formatTime(0);
+    durationLabel.textContent = formatTime(video.duration || 0);
   </script>
 </body>
 </html>
