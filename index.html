@@ -1155,6 +1155,7 @@
             en: "Fiori di Preghiera is more than an app — it's a sacred garden for the soul. Each flower you tap opens a spiritual reflection, a prayer, a moment of grace. Born to nourish your daily devotion, it gently leads you through a serene path of faith.",
             it: "Fiori di Preghiera è più di un'app: è un giardino sacro per l'anima. Ogni fiore che tocchi apre una riflessione spirituale, una preghiera, un momento di grazia. Nata per nutrire la tua devozione quotidiana, ti guida con dolcezza su un sentiero sereno di fede.",
           },
+          link: "https://vladimirgagarin.github.io/flowers/"
         },
         {
           vidSrc: "textvideo2.mp4",
@@ -1162,6 +1163,7 @@
             en: "Roses of Rome is a creative sanctuary where spirituality meets storytelling. With a deep reverence for tradition and an eye for design, we cultivate beauty through faith-inspired creations — Fiori di Preghiera being one of our dearest blossoms. Guided by our timeless motto, “Aeternum Floreamus” — Let us bloom forever — we strive to plant seeds of light that blossom in hearts across the world.",
             it: "Roses of Rome è un santuario creativo dove la spiritualità incontra la narrazione. Con profondo rispetto per la tradizione e un occhio per il design, coltiviamo la bellezza attraverso creazioni ispirate dalla fede — Fiori di Preghiera è uno dei nostri fiori più cari. Guidati dal nostro motto senza tempo, “Aeternum Floreamus” — Fioriamo in eterno — ci impegniamo a piantare semi di luce che sboccino nei cuori di tutto il mondo.",
           },
+          link: "https://vladimirgagarin.github.io/roses-of-rome/"
         },
         {
           vidSrc: "textvideo3.mp4",
@@ -1169,6 +1171,7 @@
             en: "The Cottolengo Sisters in Nairobi embody humble service, quiet strength, and unwavering devotion. Their prayers, songs, and presence are the living roots of this spiritual garden. Their love has shaped every flower in Fiori di Preghiera.",
             it: "Le Suore Cottolengo di Nairobi incarnano il servizio umile, la forza silenziosa e la devozione incrollabile. Le loro preghiere, i loro canti e la loro presenza sono le radici vive di questo giardino spirituale. Il loro amore ha plasmato ogni fiore di Fiori di Preghiera.",
           },
+          link: "https://vladimirgagarin.github.io/fiori-web/"
         },
         {
           vidSrc: "textvideo4.mp4",
@@ -1176,6 +1179,7 @@
             en: "This app was born from the labor of love. Roses of Rome brought the vision, but it was the heart and hands of Sr. Mary Japheth — her gentle guidance and profound devotion — that nurtured Fiori di Preghiera into life. It is her offering, and yours to share.",
             it: "Quest'app è nata da un lavoro d'amore. Roses of Rome ha portato la visione, ma è stato il cuore e le mani di Suor Mary Japheth — la sua guida gentile e la sua profonda devozione — a dare vita a Fiori di Preghiera. È la sua offerta, e il tuo dono da condividere.",
           },
+          link: "https://vladimirgagarin.github.io/flowers/"
         },
         {
           vidSrc: "textvideo5.mp4",
@@ -1183,6 +1187,7 @@
             en: "Download Fiori di Preghiera today — and carry a sacred garden in your pocket. Experience daily meditations, intercessory prayers, journaling, and a liturgical calendar — all wrapped in beauty and peace. It's more than an app — it’s a prayer companion that blooms with you.",
             it: "Scarica Fiori di Preghiera oggi — e porta con te un giardino sacro in tasca. Scopri meditazioni quotidiane, preghiere di intercessione, un diario spirituale e un calendario liturgico — tutto avvolto in bellezza e pace. È più di un'app — è un compagno di preghiera che fiorisce con te.",
           },
+           link: "https://vladimirgagarin.github.io/flowers/"
         },
       ];
 
@@ -1284,6 +1289,15 @@
           videoElement.innerHTML = `
           <div class="about-text">
             <p data-italian="${about.text.it}" data-english="${about.text.en}">${about.text.en}</p>
+            <a 
+              href="${about.link}" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              data-en="Blossom more" 
+              data-it="Fiorisci ancora"
+            >
+              Blossom More
+            </a>
           </div>
           <div class="about-video">
             <video muted playsinline preload="none" poster="poster.jpg">
