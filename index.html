@@ -555,6 +555,54 @@
         align-items: center;
         position: relative;
       }
+      .blossom-btn {
+        display: inline-block;
+        background: linear-gradient(90deg, #f8e8ef 0%, #d6f5e6 100%);
+        color: #2b544b;
+        padding: 0.6em 1.6em;
+        border: none;
+        border-radius: 2em 1em 2em 1em / 2em 2em 1.3em 1.3em;
+        box-shadow: 0 2px 10px rgba(160, 200, 180, 0.13);
+        font-family: 'Dancing Script', cursive, 'Segoe UI', sans-serif;
+        font-size: 1.15rem;
+        font-weight: 500;
+        letter-spacing: 1.2px;
+        text-decoration: none;
+        transition: 
+          background 0.23s,
+          color 0.16s,
+          transform 0.2s,
+          box-shadow 0.18s;
+        margin-top: 0.7em;
+        margin-bottom: 0.7em;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .blossom-btn:hover, .blossom-btn:focus {
+        background: linear-gradient(90deg, #ffebf7 0%, #c8f7e4 100%);
+        color: #187e54;
+        transform: translateY(-2px) scale(1.04) rotate(-1.5deg);
+        box-shadow: 0 4px 18px rgba(50, 180, 140, 0.13);
+        text-decoration: none;
+      }
+      
+      .blossom-btn:active {
+        transform: scale(0.99) rotate(0.5deg);
+        background: linear-gradient(90deg, #f3e0ec 0%, #bbefd9 100%);
+      }
+      
+      .blossom-btn::after {
+        content: "🌸";
+        position: absolute;
+        right: 1.3em;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 1.2em;
+        opacity: 0.7;
+        pointer-events: none;
+      }
 
       @media screen and (max-width: 800px) {
         .downloads {
@@ -1295,6 +1343,7 @@
               rel="noopener noreferrer" 
               data-en="Blossom more" 
               data-it="Fiorisci ancora"
+               class="blossom-btn"
             >
               Blossom More
             </a>
